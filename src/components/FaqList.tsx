@@ -8,44 +8,46 @@ type FaqItem = {
 };
 
 export default function FaqList({ faqs }: { faqs: FaqItem[] }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="space-y-4 py-2 overflow-visible">
+    <div className="k666-faq-list" role="list">
       {faqs.map((item, index) => {
         const isOpen = openIndex === index;
+        const id = `k666-faq-${index}`;
         return (
           <div
             key={item.q}
-            className="dx-faq-card bg-secondary rounded-xl border border-gray-800 p-5"
-            onMouseEnter={() => setOpenIndex(index)}
-            onMouseLeave={() => setOpenIndex(null)}
-            onFocus={() => setOpenIndex(index)}
-            onBlur={() => setOpenIndex(null)}
+            role="listitem"
+            className={`k666-faq-item${isOpen ? ' is-open' : ''}`}
           >
             <button
               type="button"
-              className="w-full font-semibold text-white text-left flex justify-between items-center gap-3"
+              id={`${id}-btn`}
+              className="k666-faq-trigger"
               aria-expanded={isOpen}
+              aria-controls={id}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span>{item.q}</span>
-              <span
-                className={`text-accent text-2xl leading-none transition-transform ${
-                  isOpen ? 'rotate-45' : ''
-                }`}
-                aria-hidden="true"
-              >
-                +
+              <span className="k666-faq-index" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className="k666-faq-q">{item.q}</span>
+              <span className="k666-faq-toggle" aria-hidden="true">
+                <span />
+                <span />
               </span>
             </button>
             <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+              id={id}
+              role="region"
+              aria-labelledby={`${id}-btn`}
+              className={`k666-faq-panel ${
+                isOpen ? 'k666-faq-panel--open' : ''
               }`}
             >
-              <div className="overflow-hidden">
-                <p className="text-gray-300 mt-3 leading-relaxed">{item.a}</p>
+              <div className="k666-faq-panel-inner">
+                <p>{item.a}</p>
               </div>
             </div>
           </div>

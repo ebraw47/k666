@@ -179,11 +179,17 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="game-bg fixed inset-0 z-0" aria-hidden="true">
-          <span className="game-bg-glow game-bg-glow-a" />
-          <span className="game-bg-glow game-bg-glow-b" />
-          <span className="game-bg-glow game-bg-glow-c" />
-          <span className="game-bg-grid" />
-          <span className="game-bg-scan" />
+          <span className="game-bg-mesh" />
+          <span className="game-bg-ribbon game-bg-ribbon-a" />
+          <span className="game-bg-ribbon game-bg-ribbon-b" />
+          <span className="game-bg-ribbon game-bg-ribbon-c" />
+          <span className="game-bg-glass game-bg-glass-a" />
+          <span className="game-bg-glass game-bg-glass-b" />
+          <span className="game-bg-glass game-bg-glass-c" />
+          <span className="game-bg-orb game-bg-orb-a" />
+          <span className="game-bg-orb game-bg-orb-b" />
+          <span className="game-bg-orb game-bg-orb-c" />
+          <span className="game-bg-orb game-bg-orb-d" />
           <span className="game-bg-vignette" />
         </div>
         <Header />

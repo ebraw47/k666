@@ -201,7 +201,7 @@ export default function HomePage() {
       <section className="dx-hero relative py-12 md:py-20 px-4 overflow-hidden">
         <div className="dx-hero-bg" aria-hidden="true">
           <Image
-            src="/k666-home.webp"
+            src="/k666-hero.webp"
             alt=""
             fill
             priority
@@ -235,7 +235,7 @@ export default function HomePage() {
                 &amp; EasyPaisa for deposits and withdrawals. Get the APK only from the button below.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center lg:items-start justify-center lg:justify-start mb-8">
-                <DownloadButton size="lg" label="DOWNLOAD K666" />
+                <DownloadButton size="lg" label="DOWNLOAD K666" animated />
               </div>
               <div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
                 {[
@@ -252,7 +252,7 @@ export default function HomePage() {
               <p className="text-sm text-gray-500 mt-4">*Available for Android devices</p>
             </div>
             <div className="flex-shrink-0">
-              <div className="dx-main-logo relative w-[260px] h-[260px] md:w-[340px] md:h-[340px] rounded-2xl border border-accent/40 bg-[#134e22] overflow-hidden flex items-center justify-center">
+              <div className="dx-main-logo relative w-[260px] h-[260px] md:w-[340px] md:h-[340px] rounded-2xl overflow-hidden flex items-center justify-center">
                 <Image
                   src={LOGO_PATH}
                   alt="K666 Official Logo"
@@ -262,80 +262,55 @@ export default function HomePage() {
                   priority
                   fetchPriority="high"
                 />
-                <span className="dx-star dx-star-1" aria-hidden="true" />
-                <span className="dx-star dx-star-2" aria-hidden="true" />
-                <span className="dx-star dx-star-3" aria-hidden="true" />
-                <span className="dx-star dx-star-4" aria-hidden="true" />
-                <span className="dx-star dx-star-5" aria-hidden="true" />
-                <span className="dx-star dx-star-6" aria-hidden="true" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* App info — sci-fi HUD */}
+      {/* App info — matches official K666 lobby card */}
       <section className="py-12 md:py-16 px-4">
-        <div className="container mx-auto max-w-3xl">
+        <div className="container mx-auto max-w-lg">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
             K666 Download Info
           </h2>
 
-          <div className="dx-scifi mx-auto">
-            <div className="dx-scifi-frame">
-              <span className="dx-scifi-corner dx-scifi-corner-tl" aria-hidden="true" />
-              <span className="dx-scifi-corner dx-scifi-corner-tr" aria-hidden="true" />
-              <span className="dx-scifi-corner dx-scifi-corner-bl" aria-hidden="true" />
-              <span className="dx-scifi-corner dx-scifi-corner-br" aria-hidden="true" />
-              <span className="dx-scifi-scan" aria-hidden="true" />
-
-              <div className="dx-scifi-header">
-                <span className="dx-scifi-chip">SYS // APK</span>
-                <span className="dx-scifi-chip dx-scifi-chip-live">ONLINE</span>
-              </div>
-
-              <div className="dx-scifi-body">
-                <div className="flex items-center gap-3 mb-5 pb-4 border-b border-accent/30">
-                  <div className="relative h-12 w-12 rounded-lg overflow-hidden bg-black/50 border border-accent/50 flex-shrink-0 shadow-[0_0_18px_rgba(251,223,3,0.35)]">
-                    <Image
-                      src={LOGO_PATH}
-                      alt="K666"
-                      width={48}
-                      height={48}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg leading-tight tracking-wide">
-                      K666 App Details
-                    </p>
-                    <p className="text-accent text-sm font-semibold uppercase tracking-wider">
-                      Official Pakistan APK
-                    </p>
-                  </div>
+          <div className="k666-info-card mx-auto">
+            <div className="k666-info-top">
+              <div className="k666-info-brand">
+                <div className="k666-info-logo">
+                  <Image
+                    src={LOGO_PATH}
+                    alt="K666"
+                    width={48}
+                    height={48}
+                    className="object-contain w-full h-full"
+                  />
                 </div>
-                <table className="w-full text-left dx-scifi-table">
-                  <tbody>
-                    {appInfo.map((row, i) => (
-                      <tr key={row.label} className={i % 2 === 0 ? 'bg-accent/[0.06]' : 'bg-transparent'}>
-                        <th className="py-2.5 px-3 md:px-4 text-accent font-semibold text-sm md:text-base w-[42%]">
-                          {row.label}
-                        </th>
-                        <td className="py-2.5 px-3 md:px-4 text-white text-sm md:text-base">
-                          {row.value}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <div>
+                  <p className="k666-info-title">
+                    <span className="text-accent">k</span>666
+                  </p>
+                  <p className="k666-info-sub">Official Pakistan APK</p>
+                </div>
               </div>
-
-              <div className="dx-scifi-footer" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
+              <span className="k666-info-badge">HOT</span>
             </div>
+
+            <div className="k666-info-wallet">
+              <span className="k666-info-wallet-label">App Status</span>
+              <span className="k666-info-wallet-value">Online · Free</span>
+              <span className="k666-info-deposit">APK</span>
+            </div>
+
+            <ul className="k666-info-list">
+              {appInfo.map((row) => (
+                <li key={row.label} className="k666-info-row">
+                  <span className="k666-info-key">{row.label}</span>
+                  <span className="k666-info-val">{row.value}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="text-center mt-8">
@@ -387,274 +362,228 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How to start — modern poster */}
+      {/* How to start — glass steps matching download info */}
       <section className="py-14 md:py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="dx-poster">
-            <div className="dx-poster-glow" aria-hidden="true" />
-            <div className="dx-poster-inner">
-              <div className="dx-poster-top">
-                <p className="dx-poster-kicker">Player Guide · 2026</p>
-                <h2 className="dx-poster-title">
-                  How to Start
-                  <span>with K666</span>
-                </h2>
-                <p className="dx-poster-tagline">
-                  Six clear moves from download to your first cash-out — built for Pakistan players.
-                </p>
-                <div className="dx-poster-rule" aria-hidden="true" />
-              </div>
-
-              <ol className="dx-poster-grid">
-                {[
-                  {
-                    title: 'Get the Official APK',
-                    detail:
-                      'Open k666-app.com.pk and tap Download. Use only the official button so you avoid modified copies.',
-                  },
-                  {
-                    title: 'Install on Android',
-                    detail:
-                      'Allow install from unknown sources, open the APK file, and finish setup on Android 5.0+.',
-                  },
-                  {
-                    title: 'Sign Up or Sign In',
-                    detail:
-                      'Launch K666, register with your mobile number and OTP, or log in if you already have an account.',
-                  },
-                  {
-                    title: 'Claim Offers',
-                    detail:
-                      'Check welcome bonuses, daily rewards, missions, and VIP promos — always read wagering rules first.',
-                  },
-                  {
-                    title: 'Deposit & Play',
-                    detail:
-                      'Optional: add funds with JazzCash or EasyPaisa, then pick a game from the lobby and start small.',
-                  },
-                  {
-                    title: 'Withdraw Safely',
-                    detail:
-                      'Play responsibly (18+). When ready, withdraw to your wallet after PIN and turnover rules are met.',
-                  },
-                ].map((step, i) => (
-                  <li key={step.title} className="dx-poster-card">
-                    <span className="dx-poster-num" aria-hidden="true">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <div className="dx-poster-card-body">
-                      <h3>{step.title}</h3>
-                      <p>{step.detail}</p>
-                    </div>
-                    <span className="dx-poster-card-edge" aria-hidden="true" />
-                  </li>
-                ))}
-              </ol>
-
-              <div className="dx-poster-cta">
-                <p className="dx-poster-cta-note">Official APK · JazzCash &amp; EasyPaisa · 18+ only</p>
-                <DownloadButton size="md" label="DOWNLOAD K666 NOW" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Signup */}
-      <section id="signup" className="py-14 md:py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="text-accent font-semibold tracking-wide uppercase text-sm mb-3">Account</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">K666 Signup — Create Your Account</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-5">
-                New to K666? Open the app and tap <strong className="text-white">Register / Signup</strong>.
-                Enter your Pakistani mobile number, set a strong password, and verify the OTP sent to your phone.
-                You can also add an invite code if a friend shared one.
+          <div className="k666-start-panel">
+            <div className="k666-start-head">
+              <span className="k666-start-badge">Player Guide · 2026</span>
+              <h2 className="k666-start-title">
+                How to Start with <span>K666</span>
+              </h2>
+              <p className="k666-start-sub">
+                Six clear moves from download to your first cash-out — built for Pakistan players.
               </p>
-              <ol className="space-y-3 text-gray-300 mb-6">
-                {[
-                  'Tap Register on the welcome screen',
-                  'Enter mobile number + password',
-                  'Verify OTP and set security PIN if asked',
-                  'Start exploring the lobby and offers',
-                ].map((step, i) => (
-                  <li key={step} className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-primary text-sm font-bold flex items-center justify-center">
-                      {i + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <Link
-                href="/blog/create-k666-account-and-login"
-                className="text-accent hover:underline font-semibold"
-              >
-                Full signup &amp; login guide →
-              </Link>
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="dx-phone-shot relative w-[220px] sm:w-[260px] rounded-[1.75rem] overflow-hidden border border-accent/35 shadow-[0_20px_60px_rgba(0,0,0,0.55)] bg-[#0a2e10]">
-                <Image
-                  src="/k666-signup.webp"
-                  alt="K666 signup and register screen"
-                  width={720}
-                  height={1280}
-                  className="w-full h-auto object-contain"
-                  sizes="260px"
-                />
-              </div>
+
+            <ol className="k666-start-grid">
+              {[
+                {
+                  title: 'Get the Official APK',
+                  detail:
+                    'Open k666-app.com.pk and tap Download. Use only the official button so you avoid modified copies.',
+                },
+                {
+                  title: 'Install on Android',
+                  detail:
+                    'Allow install from unknown sources, open the APK file, and finish setup on Android 5.0+.',
+                },
+                {
+                  title: 'Sign Up or Sign In',
+                  detail:
+                    'Launch K666, register with your mobile number and OTP, or log in if you already have an account.',
+                },
+                {
+                  title: 'Claim Offers',
+                  detail:
+                    'Check welcome bonuses, daily rewards, missions, and VIP promos — always read wagering rules first.',
+                },
+                {
+                  title: 'Deposit & Play',
+                  detail:
+                    'Optional: add funds with JazzCash or EasyPaisa, then pick a game from the lobby and start small.',
+                },
+                {
+                  title: 'Withdraw Safely',
+                  detail:
+                    'Play responsibly (18+). When ready, withdraw to your wallet after PIN and turnover rules are met.',
+                },
+              ].map((step, i) => (
+                <li key={step.title} className="k666-start-card">
+                  <span className="k666-start-num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="k666-start-cta">
+              <p className="k666-start-note">Official APK · JazzCash &amp; EasyPaisa · 18+ only</p>
+              <DownloadButton size="md" label="DOWNLOAD K666 NOW" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sign in */}
-      <section id="signin" className="py-14 md:py-20 px-4 bg-secondary/25">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-              <div className="dx-phone-shot relative w-[220px] sm:w-[260px] rounded-[1.75rem] overflow-hidden border border-cyan/30 shadow-[0_20px_60px_rgba(0,0,0,0.55)] bg-[#0a2e10]">
-                <Image
-                  src="/k666-login.webp"
-                  alt="K666 sign in and login screen"
-                  width={720}
-                  height={1280}
-                  className="w-full h-auto object-contain"
-                  sizes="260px"
-                />
+      {/* Account / Login / Wallet / Cash out — glass flow + glossy phones */}
+      {[
+        {
+          id: 'signup',
+          badge: 'Account',
+          title: (
+            <>
+              K666 Signup — Create Your <span>Account</span>
+            </>
+          ),
+          body: (
+            <>
+              New to K666? Open the app and tap <strong>Register / Signup</strong>. Enter your Pakistani
+              mobile number, set a strong password, and verify the OTP sent to your phone. You can also
+              add an invite code if a friend shared one.
+            </>
+          ),
+          steps: [
+            'Tap Register on the welcome screen',
+            'Enter mobile number + password',
+            'Verify OTP and set security PIN if asked',
+            'Start exploring the lobby and offers',
+          ],
+          stepsOrdered: true,
+          href: '/blog/create-k666-account-and-login',
+          linkLabel: 'Full signup & login guide →',
+          img: '/k666-signup.webp',
+          imgAlt: 'K666 signup and register screen',
+          reverse: false,
+        },
+        {
+          id: 'signin',
+          badge: 'Login',
+          title: (
+            <>
+              K666 Sign In — Access Your <span>Account</span>
+            </>
+          ),
+          body: (
+            <>
+              Already registered? Open K666 and choose <strong>Login / Sign In</strong>. Use the same
+              mobile number and password you created at signup. Never share your OTP or withdrawal PIN
+              with anyone claiming to be support.
+            </>
+          ),
+          steps: [
+            'Enter your registered phone number',
+            'Type your password carefully',
+            'Complete any OTP check if prompted',
+            'If login fails, reset password or contact in-app support',
+          ],
+          stepsOrdered: false,
+          href: '/blog/create-k666-account-and-login',
+          linkLabel: 'Troubleshoot login issues →',
+          img: '/k666-login.webp',
+          imgAlt: 'K666 sign in and login screen',
+          reverse: true,
+        },
+        {
+          id: 'deposit',
+          badge: 'Wallet',
+          title: (
+            <>
+              K666 Deposit — <span>JazzCash</span> &amp; EasyPaisa
+            </>
+          ),
+          body: (
+            <>
+              Add balance from the <strong>Deposit / Funds</strong> screen. Pick JazzCash or EasyPaisa when
+              listed, enter the amount, and pay only to the recipient details shown inside the app — never
+              reuse old numbers from chats.
+            </>
+          ),
+          steps: [
+            'Open Deposit and choose a payment method',
+            'Enter amount and note any minimum shown',
+            'Copy exact recipient details from the app',
+            'Pay in your wallet app and save the transaction ID',
+          ],
+          stepsOrdered: true,
+          href: '/deposit-money-in-k666',
+          linkLabel: 'Full deposit guide →',
+          img: '/k666-deposit.webp',
+          imgAlt: 'K666 deposit funds screen with JazzCash and EasyPaisa',
+          reverse: false,
+        },
+        {
+          id: 'withdraw',
+          badge: 'Cash out',
+          title: (
+            <>
+              K666 Withdrawal — Get Your <span>Winnings</span>
+            </>
+          ),
+          body: (
+            <>
+              When you are ready to cash out, open <strong>Withdraw</strong>. Bind a JazzCash or EasyPaisa
+              wallet in your own name, meet any turnover rules, enter the amount, and confirm with your PIN
+              or OTP. Processing is often minutes to a few hours.
+            </>
+          ),
+          steps: [
+            'Bind your wallet account (name must match)',
+            'Enter amount within the shown min / max',
+            'Complete PIN or OTP verification',
+            'Save the request ID until funds arrive',
+          ],
+          stepsOrdered: false,
+          href: '/withdraw-money-from-k666',
+          linkLabel: 'Full withdrawal guide →',
+          img: '/k666-withdraw.webp',
+          imgAlt: 'K666 withdrawal methods screen',
+          reverse: true,
+        },
+      ].map((block) => {
+        const ListTag = block.stepsOrdered ? 'ol' : 'ul';
+        return (
+          <section key={block.id} id={block.id} className="py-10 md:py-14 px-4">
+            <div className="container mx-auto max-w-6xl">
+              <div className={`k666-flow-panel${block.reverse ? ' k666-flow-panel--reverse' : ''}`}>
+                <div className="k666-flow-copy">
+                  <span className="k666-flow-badge">{block.badge}</span>
+                  <h2 className="k666-flow-title">{block.title}</h2>
+                  <p className="k666-flow-body">{block.body}</p>
+                  <ListTag className="k666-flow-steps">
+                    {block.steps.map((step, i) => (
+                      <li key={step}>
+                        <span className="k666-flow-step-mark" aria-hidden="true">
+                          {block.stepsOrdered ? String(i + 1) : '✓'}
+                        </span>
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ListTag>
+                  <Link href={block.href} className="k666-flow-link">
+                    {block.linkLabel}
+                  </Link>
+                </div>
+                <div className="k666-flow-media">
+                  <div className="k666-gloss-phone">
+                    <span className="k666-gloss-phone-shine" aria-hidden="true" />
+                    <span className="k666-gloss-phone-notch" aria-hidden="true" />
+                    <Image
+                      src={block.img}
+                      alt={block.imgAlt}
+                      width={720}
+                      height={1280}
+                      className="k666-gloss-phone-img"
+                      sizes="260px"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-cyan font-semibold tracking-wide uppercase text-sm mb-3">Login</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">K666 Sign In — Access Your Account</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-5">
-                Already registered? Open K666 and choose <strong className="text-white">Login / Sign In</strong>.
-                Use the same mobile number and password you created at signup. Never share your OTP or
-                withdrawal PIN with anyone claiming to be support.
-              </p>
-              <ul className="space-y-3 text-gray-300 mb-6">
-                {[
-                  'Enter your registered phone number',
-                  'Type your password carefully',
-                  'Complete any OTP check if prompted',
-                  'If login fails, reset password or contact in-app support',
-                ].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-cyan font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/blog/create-k666-account-and-login"
-                className="text-accent hover:underline font-semibold"
-              >
-                Troubleshoot login issues →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deposit */}
-      <section id="deposit" className="py-14 md:py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="text-accent font-semibold tracking-wide uppercase text-sm mb-3">Wallet</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">K666 Deposit — JazzCash &amp; EasyPaisa</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-5">
-                Add balance from the <strong className="text-white">Deposit / Funds</strong> screen. Pick JazzCash
-                or EasyPaisa when listed, enter the amount, and pay only to the recipient details shown
-                inside the app — never reuse old numbers from chats.
-              </p>
-              <ol className="space-y-3 text-gray-300 mb-6">
-                {[
-                  'Open Deposit and choose a payment method',
-                  'Enter amount and note any minimum shown',
-                  'Copy exact recipient details from the app',
-                  'Pay in your wallet app and save the transaction ID',
-                ].map((step, i) => (
-                  <li key={step} className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-primary text-sm font-bold flex items-center justify-center">
-                      {i + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <Link
-                href="/deposit-money-in-k666"
-                className="text-accent hover:underline font-semibold"
-              >
-                Full deposit guide →
-              </Link>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="dx-phone-shot relative w-[220px] sm:w-[260px] rounded-[1.75rem] overflow-hidden border border-accent/35 shadow-[0_20px_60px_rgba(0,0,0,0.55)] bg-[#0a2e10]">
-                <Image
-                  src="/k666-deposit.webp"
-                  alt="K666 deposit funds screen with JazzCash and EasyPaisa"
-                  width={720}
-                  height={1280}
-                  className="w-full h-auto object-contain"
-                  sizes="260px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Withdrawal */}
-      <section id="withdraw" className="py-14 md:py-20 px-4 bg-secondary/25">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-              <div className="dx-phone-shot relative w-[220px] sm:w-[260px] rounded-[1.75rem] overflow-hidden border border-cyan/30 shadow-[0_20px_60px_rgba(0,0,0,0.55)] bg-[#0a2e10]">
-                <Image
-                  src="/k666-withdraw.webp"
-                  alt="K666 withdrawal methods screen"
-                  width={720}
-                  height={1280}
-                  className="w-full h-auto object-contain"
-                  sizes="260px"
-                />
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-cyan font-semibold tracking-wide uppercase text-sm mb-3">Cash out</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">K666 Withdrawal — Get Your Winnings</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-5">
-                When you are ready to cash out, open <strong className="text-white">Withdraw</strong>. Bind a
-                JazzCash or EasyPaisa wallet in your own name, meet any turnover rules, enter the amount,
-                and confirm with your PIN or OTP. Processing is often minutes to a few hours.
-              </p>
-              <ul className="space-y-3 text-gray-300 mb-6">
-                {[
-                  'Bind your wallet account (name must match)',
-                  'Enter amount within the shown min / max',
-                  'Complete PIN or OTP verification',
-                  'Save the request ID until funds arrive',
-                ].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-cyan font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/withdraw-money-from-k666"
-                className="text-accent hover:underline font-semibold"
-              >
-                Full withdrawal guide →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        );
+      })}
 
       {/* Screenshots gallery */}
       <section className="py-14 md:py-20 px-4">
@@ -672,89 +601,120 @@ export default function HomePage() {
         <ScreenshotCarousel screenshots={screenshots} />
       </section>
 
-      {/* Features */}
-      <section className="py-12 md:py-16 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
-            Top Features of K666
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5">
-            {features.map((f, i) => (
-              <div key={f.title} className="bg-secondary rounded-xl p-6 border border-gray-800">
-                <h3 className="text-xl font-bold text-accent mb-2">
-                  {i + 1}. {f.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{f.text}</p>
-              </div>
-            ))}
+      {/* Features — glass panel matching start / download info */}
+      <section className="py-14 md:py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="k666-features-panel">
+            <div className="k666-features-head">
+              <span className="k666-features-badge">Why Players Choose Us</span>
+              <h2 className="k666-features-title">
+                Top Features of <span>K666</span>
+              </h2>
+              <p className="k666-features-sub">
+                Built for Pakistan phones — wallets, rewards, and support in one glass-clear lobby.
+              </p>
+            </div>
+            <ul className="k666-features-grid">
+              {features.map((f, i) => (
+                <li key={f.title} className="k666-features-card">
+                  <span className="k666-features-num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3>{f.title}</h3>
+                  <p>{f.text}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Guides */}
-      <section className="py-12 md:py-16 px-4 bg-secondary/30 overflow-visible">
-        <div className="container mx-auto max-w-5xl overflow-visible">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
-            K666 Guides
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 py-4 overflow-visible">
-            {[
-              {
-                href: '/download-k666',
-                title: 'Download APK',
-                text: 'Install the latest K666 build safely on Android.',
-                img: '/k666-home.webp',
-              },
-              {
-                href: '/deposit-money-in-k666',
-                title: 'Deposit Guide',
-                text: 'Add funds with JazzCash or EasyPaisa step by step.',
-                img: '/k666-deposit.webp',
-              },
-              {
-                href: '/withdraw-money-from-k666',
-                title: 'Withdraw Guide',
-                text: 'Cash out winnings to your local wallet.',
-                img: '/k666-withdraw.webp',
-              },
-            ].map((g) => (
-              <Link
-                key={g.href}
-                href={g.href}
-                className="dx-guide-card bg-primary rounded-xl overflow-hidden border border-gray-800 hover:border-accent group block"
-              >
-                <Image
-                  src={g.img}
-                  alt={g.title}
-                  width={720}
-                  height={1280}
-                  sizes="33vw"
-                  className="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:underline">{g.title}</h3>
-                  <p className="text-gray-300 text-sm">{g.text}</p>
-                </div>
-              </Link>
-            ))}
+      {/* Guides — glass panel matching features / start */}
+      <section className="py-14 md:py-20 px-4 overflow-visible">
+        <div className="container mx-auto max-w-6xl overflow-visible">
+          <div className="k666-guides-panel">
+            <div className="k666-guides-head">
+              <span className="k666-guides-badge">Player Tutorials</span>
+              <h2 className="k666-guides-title">
+                K666 <span>Guides</span>
+              </h2>
+              <p className="k666-guides-sub">
+                Download, deposit, and withdraw — three clear paths for Pakistan players.
+              </p>
+            </div>
+            <ul className="k666-guides-grid">
+              {[
+                {
+                  href: '/download-k666',
+                  title: 'Download APK',
+                  text: 'Install the latest K666 build safely on Android.',
+                  img: '/k666-home.webp',
+                  num: '01',
+                },
+                {
+                  href: '/deposit-money-in-k666',
+                  title: 'Deposit Guide',
+                  text: 'Add funds with JazzCash or EasyPaisa step by step.',
+                  img: '/k666-deposit.webp',
+                  num: '02',
+                },
+                {
+                  href: '/withdraw-money-from-k666',
+                  title: 'Withdraw Guide',
+                  text: 'Cash out winnings to your local wallet.',
+                  img: '/k666-withdraw.webp',
+                  num: '03',
+                },
+              ].map((g) => (
+                <li key={g.href} className="k666-guides-item">
+                  <Link href={g.href} className="k666-guides-linkwrap">
+                    <span className="k666-guides-media k666-gloss-phone">
+                      <span className="k666-gloss-phone-shine" aria-hidden="true" />
+                      <Image
+                        src={g.img}
+                        alt={g.title}
+                        width={720}
+                        height={1280}
+                        sizes="(max-width: 768px) 160px, 180px"
+                        className="k666-guides-img"
+                      />
+                    </span>
+                    <span className="k666-guides-card">
+                      <span className="k666-guides-num" aria-hidden="true">
+                        {g.num}
+                      </span>
+                      <h3>{g.title}</h3>
+                      <p>{g.text}</p>
+                      <span className="k666-guides-cta">Open guide →</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12 md:py-16 px-4 overflow-visible">
+      {/* FAQ — glossy glass accordion */}
+      <section className="py-14 md:py-20 px-4 overflow-visible">
         <div className="container mx-auto max-w-3xl overflow-visible">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
-            Frequently Asked Questions
-          </h2>
-          <FaqList faqs={faqs} />
-          <p className="text-center text-gray-500 text-sm mt-8">
-            Need help? Visit{' '}
-            <Link href="/contact-us" className="text-accent hover:underline">
-              Contact Us
-            </Link>{' '}
-            or email {SUPPORT_EMAIL}
-          </p>
+          <div className="k666-faq-shell">
+            <div className="k666-faq-shell-shine" aria-hidden="true" />
+            <div className="k666-faq-head">
+              <span className="k666-faq-badge">Help Desk</span>
+              <h2 className="k666-faq-title">
+                Frequently Asked <span>Questions</span>
+              </h2>
+              <p className="k666-faq-sub">
+                Quick answers on download, wallets, deposits, and play — tap a row to open.
+              </p>
+            </div>
+            <FaqList faqs={faqs} />
+            <p className="k666-faq-foot">
+              Need help? Visit{' '}
+              <Link href="/contact-us">Contact Us</Link> or email {SUPPORT_EMAIL}
+            </p>
+          </div>
         </div>
       </section>
 

@@ -5,12 +5,14 @@ type DownloadButtonProps = {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
   blink?: boolean;
+  /** Shine / hover motion — home hero only */
+  animated?: boolean;
 };
 
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm gap-2 rounded-xl',
-  md: 'px-5 py-2.5 text-sm sm:px-7 sm:py-3.5 sm:text-base gap-2.5 rounded-xl sm:rounded-2xl',
-  lg: 'px-6 py-3 text-base sm:px-9 sm:py-4 sm:text-lg md:px-10 md:py-5 md:text-xl gap-3 rounded-2xl',
+  sm: 'px-4 py-2 text-sm gap-2 rounded-full',
+  md: 'px-5 py-2.5 text-sm sm:px-7 sm:py-3.5 sm:text-base gap-2.5 rounded-full',
+  lg: 'px-6 py-3 text-base sm:px-9 sm:py-4 sm:text-lg md:px-10 md:py-5 md:text-xl gap-3 rounded-full',
 };
 
 const svgSizeClasses = {
@@ -24,6 +26,7 @@ export default function DownloadButton({
   className = '',
   size = 'md',
   blink = false,
+  animated = false,
 }: DownloadButtonProps) {
   return (
     <a
@@ -32,7 +35,7 @@ export default function DownloadButton({
       rel="noopener noreferrer"
       aria-label="Download K666 APK for Android"
       title={label}
-      className={`download-btn inline-flex w-fit max-w-full items-center justify-center font-bold tracking-wide ${sizeClasses[size]} ${blink ? 'download-btn--blink' : ''} ${className}`}
+      className={`download-btn inline-flex w-fit max-w-full items-center justify-center font-bold tracking-wide ${sizeClasses[size]} ${animated ? 'download-btn--animated' : ''} ${animated && blink ? 'download-btn--blink' : ''} ${className}`}
     >
       <svg
         className={`download-icon flex-shrink-0 ${svgSizeClasses[size]}`}

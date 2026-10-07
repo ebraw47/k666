@@ -74,7 +74,8 @@ export default function ScreenshotCarousel({ screenshots }: ScreenshotCarouselPr
             className="dx-gallery-phone group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label={`Open ${current.title} fullscreen`}
           >
-            <span className="dx-gallery-phone-bezel">
+            <span className="dx-gallery-phone-bezel k666-gloss-phone">
+              <span className="k666-gloss-phone-shine" aria-hidden="true" />
               <span className="dx-gallery-phone-notch" aria-hidden="true" />
               <Image
                 src={current.src}
@@ -136,15 +137,16 @@ export default function ScreenshotCarousel({ screenshots }: ScreenshotCarouselPr
               role="option"
               aria-selected={selected}
               onClick={() => setActive(i)}
-              className={`dx-gallery-thumb snap-center flex-shrink-0 ${selected ? 'is-active' : ''}`}
+              className={`dx-gallery-thumb k666-gloss-thumb snap-center flex-shrink-0 ${selected ? 'is-active' : ''}`}
             >
+              <span className="k666-gloss-phone-shine" aria-hidden="true" />
               <Image
                 src={shot.src}
                 alt={shot.alt}
                 width={360}
                 height={640}
                 sizes="96px"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
               />
               <span className="dx-gallery-thumb-label">{shot.title}</span>
             </button>
