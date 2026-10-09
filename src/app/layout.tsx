@@ -69,15 +69,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/k666-logo.webp', type: 'image/webp', sizes: '512x512' }
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-32.png?v=k666', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16.png?v=k666', type: 'image/png', sizes: '16x16' },
+      { url: '/icon-192.png?v=k666', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png?v=k666', type: 'image/png', sizes: '512x512' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180' }
+      { url: '/apple-touch-icon.png?v=k666', sizes: '180x180' }
     ],
-    shortcut: '/favicon-32.png'
+    shortcut: '/favicon-32.png?v=k666'
   },
   verification: {
     google: "8a7c21f6e90a89ef",
@@ -138,12 +139,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="geo.region" content="PK" />
         <meta name="geo.placename" content="Pakistan" />
-        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/k666-logo.webp" type="image/webp" sizes="512x512" />
-        <link rel="shortcut icon" href="/favicon-32.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/favicon.ico?v=k666" sizes="any" />
+        <link rel="icon" href="/favicon-32.png?v=k666" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16.png?v=k666" type="image/png" sizes="16x16" />
+        <link rel="shortcut icon" href="/favicon-32.png?v=k666" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=k666" sizes="180x180" />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
