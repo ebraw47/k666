@@ -8,9 +8,12 @@ const BlogCategoryDropdown = () => {
   
   const categories = [
     { name: 'Account & Login', href: '/blog/create-k666-account-and-login' },
+    { name: 'Login / OTP Fix', href: '/blog/k666-login-otp-not-working' },
     { name: 'Download & Install', href: '/blog/how-to-download-install-k666-apk-pakistan' },
     { name: 'Deposit Guide', href: '/blog/k666-deposit-jazzcash-easypaisa-guide' },
+    { name: 'Deposit Not Showing', href: '/blog/k666-jazzcash-deposit-not-showing' },
     { name: 'Withdraw Guide', href: '/blog/k666-withdraw-money-guide' },
+    { name: 'VIP & Invite', href: '/blog/k666-vip-rebate-invite-guide' },
     { name: 'App Review', href: '/blog/k666-app-review-2026' },
     { name: 'Safety', href: '/blog/is-k666-safe-legal-pakistan' },
     { name: 'Beginner Guide', href: '/blog/how-to-use-k666-app-pakistan-guide' },

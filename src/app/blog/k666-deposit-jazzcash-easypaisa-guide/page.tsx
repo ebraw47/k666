@@ -60,7 +60,21 @@ export default function Page() {
           <li>Match the exact amount selected in the deposit screen.</li>
           <li>Contact in-app support with the transaction ID and time.</li>
         </ul>
-        <p>Full page: <Link href="/deposit-money-in-k666" className="text-accent hover:underline">Deposit money in K666</Link>. Next: <Link href="/blog/k666-withdraw-money-guide" className="text-accent hover:underline">withdraw guide</Link>.</p>
+        <p>
+          Paid but balance missing?{' '}
+          <Link href="/blog/k666-jazzcash-deposit-not-showing" className="text-accent hover:underline">
+            K666 JazzCash deposit not showing
+          </Link>
+          . Full page:{' '}
+          <Link href="/deposit-money-in-k666" className="text-accent hover:underline">
+            Deposit money in K666
+          </Link>
+          . Next:{' '}
+          <Link href="/blog/k666-withdraw-money-guide" className="text-accent hover:underline">
+            withdraw guide
+          </Link>
+          .
+        </p>
     
       </div>
       <div className="mt-12 text-center">

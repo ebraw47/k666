@@ -10,6 +10,9 @@ const blogSlugs = [
   'k666-withdraw-money-guide',
   'is-k666-safe-legal-pakistan',
   'how-to-use-k666-app-pakistan-guide',
+  'k666-login-otp-not-working',
+  'k666-jazzcash-deposit-not-showing',
+  'k666-vip-rebate-invite-guide',
 ];
 
 export async function GET() {

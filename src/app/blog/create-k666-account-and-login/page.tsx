@@ -65,7 +65,17 @@ export default function Page() {
           <li>Use the same name as your JazzCash / EasyPaisa account for smoother withdrawals later.</li>
           <li>If login fails, use Forgot Password via OTP — not a third-party &quot;agent.&quot;</li>
         </ul>
-        <p>Next: <Link href="/blog/k666-deposit-jazzcash-easypaisa-guide" className="text-accent hover:underline">deposit with JazzCash / EasyPaisa</Link>.</p>
+        <p>
+          Login stuck? See{' '}
+          <Link href="/blog/k666-login-otp-not-working" className="text-accent hover:underline">
+            K666 login &amp; OTP fix guide
+          </Link>
+          . Next:{' '}
+          <Link href="/blog/k666-deposit-jazzcash-easypaisa-guide" className="text-accent hover:underline">
+            deposit with JazzCash / EasyPaisa
+          </Link>
+          .
+        </p>
     
       </div>
       <div className="mt-12 text-center">

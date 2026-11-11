@@ -98,6 +98,27 @@ const posts = [
     readTime: '14 min read',
     featured: false,
   },
+  {
+    slug: 'k666-login-otp-not-working',
+    title: 'K666 Login & OTP Not Working: Fix Guide',
+    description: 'Fix OTP delays, login errors, locked accounts, and password reset issues.',
+    readTime: '7 min read',
+    featured: false,
+  },
+  {
+    slug: 'k666-jazzcash-deposit-not-showing',
+    title: 'K666 JazzCash Deposit Not Showing: Fix Guide',
+    description: 'Paid but balance missing? Check amount, TID, and how to report delayed credit.',
+    readTime: '8 min read',
+    featured: false,
+  },
+  {
+    slug: 'k666-vip-rebate-invite-guide',
+    title: 'K666 VIP, Rebate & Invite Guide 2026',
+    description: 'How VIP levels, rebates, and referral rewards work — plus bonus safety tips.',
+    readTime: '9 min read',
+    featured: false,
+  },
 ] as const;
 
 export default function Blog() {
@@ -124,12 +145,12 @@ export default function Blog() {
             <h2 className="text-2xl font-bold mb-4 text-white">{post.title}</h2>
             <p className="text-gray-300 mb-4">{post.description}</p>
             <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-              <span>October 2026</span>
+              <span>November 2026</span>
               <span>•</span>
               <span>{post.readTime}</span>
             </div>
             <Link href={`/blog/${post.slug}`} className="text-accent hover:underline font-semibold">
-              Read More →
+              Read {post.title} →
             </Link>
           </div>
         ))}

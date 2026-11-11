@@ -38,7 +38,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/create-777dx-account-and-login", destination: "/blog/create-k666-account-and-login", permanent: true },
       { source: "/blog/777dx-deposit-jazzcash-easypaisa-guide", destination: "/blog/k666-deposit-jazzcash-easypaisa-guide", permanent: true },
       { source: "/blog/777dx-withdraw-money-guide", destination: "/blog/k666-withdraw-money-guide", permanent: true },
-      { source: "/blog/777dx-vip-rebate-invite-guide", destination: "/blog", permanent: true },
+      { source: "/blog/777dx-vip-rebate-invite-guide", destination: "/blog/k666-vip-rebate-invite-guide", permanent: true },
       { source: "/blog/is-777dx-safe-legal-pakistan", destination: "/blog/is-k666-safe-legal-pakistan", permanent: true },
       { source: "/blog/how-to-use-777dx-app-pakistan-guide", destination: "/blog/how-to-use-k666-app-pakistan-guide", permanent: true },
       // Legacy SK777 → K666
@@ -67,10 +67,9 @@ const nextConfig: NextConfig = {
       { source: "/blog/create-jz666-account-and-login", destination: "/blog/create-k666-account-and-login", permanent: true },
       { source: "/blog/jz666-deposit-jazzcash-easypaisa-guide", destination: "/blog/k666-deposit-jazzcash-easypaisa-guide", permanent: true },
       { source: "/blog/jz666-withdraw-money-guide", destination: "/blog/k666-withdraw-money-guide", permanent: true },
-      { source: "/blog/jz666-vip-rebate-bonus-guide", destination: "/blog", permanent: true },
+      { source: "/blog/jz666-vip-rebate-bonus-guide", destination: "/blog/k666-vip-rebate-invite-guide", permanent: true },
       { source: "/blog/is-jz666-safe-legal-pakistan", destination: "/blog/is-k666-safe-legal-pakistan", permanent: true },
       { source: "/blog/how-to-use-jz666-app-pakistan-guide", destination: "/blog/how-to-use-k666-app-pakistan-guide", permanent: true },
-      { source: "/blog/k666-vip-rebate-invite-guide", destination: "/blog", permanent: true },
       // Older brand routes → K666
       { source: "/download-pk365", destination: "/download-k666", permanent: true },
       { source: "/deposit-money-in-pk365", destination: "/deposit-money-in-k666", permanent: true },

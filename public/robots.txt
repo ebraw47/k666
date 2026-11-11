@@ -22,6 +22,9 @@ Allow: /blog/k666-deposit-jazzcash-easypaisa-guide
 Allow: /blog/k666-withdraw-money-guide
 Allow: /blog/is-k666-safe-legal-pakistan
 Allow: /blog/how-to-use-k666-app-pakistan-guide
+Allow: /blog/k666-login-otp-not-working
+Allow: /blog/k666-jazzcash-deposit-not-showing
+Allow: /blog/k666-vip-rebate-invite-guide
 
 User-agent: GPTBot
 Disallow: /
